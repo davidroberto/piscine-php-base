@@ -1,6 +1,22 @@
 <?php
 
-$articles = ['article 1', 'article 2', 'article 3'];
+$articles = [
+    "1" => [
+        "title" => "Article 1",
+        "image" => "https://img.freepik.com/psd-premium/color-wing-png-isole-fond-transparent_1034016-9965.jpg",
+        "content" => "blalblalblalb"
+    ],
+    "2" => [
+        "title" => "Article 2",
+        "image" => "https://img.freepik.com/psd-premium/color-wing-png-isole-fond-transparent_1034016-9965.jpg",
+        "content" => "blalblalblalb"
+    ],
+    "3" => [
+        "title" => "Article 2",
+        "image" => "https://img.freepik.com/psd-premium/color-wing-png-isole-fond-transparent_1034016-9965.jpg",
+        "content" => "blalblalblalb"
+    ]
+];
 
 ?>
 
@@ -21,7 +37,9 @@ $articles = ['article 1', 'article 2', 'article 3'];
         <?php foreach ($articles as $article) { ?>
 
             <article>
-                <h2><?php echo $article; ?></h2>
+                <h2><?php echo $article['title']; ?></h2>
+                <img src="<?php echo $article['image']; ?>" alt="<?php echo $article['title']; ?>" />
+                <p><?php echo $article['content']; ?></p>
             </article>
 
         <?php } ?>

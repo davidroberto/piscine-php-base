@@ -23,6 +23,25 @@ $articles = [
 
 ?>
 
+
+<?php
+
+    function isContentTooLong($article) {
+        return mb_strlen($article['content'], 'UTF-8') > 50;
+    }
+
+    function shortenString($stringToCut) {
+        return substr($stringToCut, 0, 30);
+    }
+
+?>
+
+
+
+
+
+?>
+
 <?php require_once('./partials/_header.php'); ?>
 
 
@@ -37,9 +56,9 @@ $articles = [
                     <h2><?php echo $article['title']; ?></h2>
                     <img src="<?php echo $article['image']; ?>" alt="<?php echo $article['title']; ?>" />
 
-                    <?php if (mb_strlen($article['content'], 'UTF-8') > 50) { ?>
+                    <?php if (isContentTooLong($article)) { ?>
 
-                        <p>Contenu trop long</p>
+                        <p><?php echo shortenString($article['content']) ?></p>
 
                     <?php } else { ?>
 

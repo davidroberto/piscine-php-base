@@ -15,8 +15,8 @@
     <h2>Blog</h2>
     <nav>
         <ul>
-            <li>Accueil</li>
-            <li>Les articles</li>
+            <li><a href="http://localhost:8888/piscine-php-test">Accueil</a></li>
+            <li><a href="http://localhost:8888/piscine-php-test/blog.php">Les articles</a></li>
         </ul>
     </nav>
 

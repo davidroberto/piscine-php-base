@@ -1,5 +1,11 @@
+
 <?php
 
-$age = 18;
+$age = 34;
+$isDead = false;
 
 echo $age;
+
+if ($isDead === true) {
+    echo "Déjà mort";
+}

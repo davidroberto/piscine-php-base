@@ -1,5 +1,11 @@
 
-<?php $name = "David Robert"; ?>
+<?php
+
+$name = "David Robert";
+
+$isLogged = false;
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -16,10 +22,17 @@
 <main>
     <header>
 
-        <p>Bonjour <?php echo $name; ?></p>
+        <?php if ($isLogged) { ?>
+
+            <p>Bonjour <?php echo $name; ?></p>
+
+        <?php } else { ?>
+
+            <p>Veuillez vous connecter</p>
+
+        <?php } ?>
 
 
-        <p>Veuillez vous connecter</p>
     </header>
 
     <h1>Le super blog de la piscine</h1>

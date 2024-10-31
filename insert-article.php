@@ -21,11 +21,19 @@
 
 
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') { ?>
-        <p>Votre article a bien été créé</p>
-        <p>Résumé de l'article</p>
-        <p>Titre : <?php echo $_POST['title']; ?></p>
-        <p>Image : <?php echo $_POST['image']; ?></p>
-        <p>Contenu : <?php echo $_POST['content']; ?></p>
+
+        <?php if ($_POST['title'] &&
+            $_POST['content'] &&
+            $_POST['image'] &&
+            mb_strlen($_POST['title']) > 3&&
+            mb_strlen($_POST['content']) > 4 &&
+            mb_strlen($_POST['image']) > 2
+        ) { ?>
+            <p>Article enregistré !</p>
+        <?php } else { ?>
+            <p>Attention, les données ne sont pas valides</p>
+        <?php } ?>
+
     <?php } ?>
 
 </main>

@@ -21,7 +21,11 @@
 
 
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') { ?>
-        <p>Vous avez envoyé des données</p>
+        <p>Votre article a bien été créé</p>
+        <p>Résumé de l'article</p>
+        <p>Titre : <?php echo $_POST['title']; ?></p>
+        <p>Image : <?php echo $_POST['image']; ?></p>
+        <p>Contenu : <?php echo $_POST['content']; ?></p>
     <?php } ?>
 
 </main>

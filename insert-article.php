@@ -19,7 +19,6 @@
 
     </form>
 
-
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') { ?>
 
         <?php if ($_POST['title'] &&
@@ -29,7 +28,32 @@
             mb_strlen($_POST['content']) > 4 &&
             mb_strlen($_POST['image']) > 2
         ) { ?>
-            <p>Article enregistré !</p>
+
+            <?php
+
+                // je créé un tableau contenant toutes mes valeurs
+                // issues du formulaire
+                $article = [
+                    "title" => $_POST['title'],
+                    "content" => $_POST['content'],
+                    "image" => $_POST['image'],
+                ];
+
+                // je récupère le chemin du fichier json
+                // qui servira à stocker les données
+                $path = './articles.json';
+
+                // je convertis mon article en json
+                $jsonString = json_encode($article, JSON_PRETTY_PRINT);
+
+                // j'ouvre le fichier json, je stocke mon article
+                // dedans et je ferme le fichier json
+                $fp = fopen($path, 'w');
+                fwrite($fp, $jsonString);
+                fclose($fp);
+            ?>
+
+
         <?php } else { ?>
             <p>Attention, les données ne sont pas valides</p>
         <?php } ?>

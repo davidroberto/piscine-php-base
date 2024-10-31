@@ -38,10 +38,6 @@ $articles = [
 
 
 
-
-
-?>
-
 <?php require_once('./partials/_header.php'); ?>
 
 

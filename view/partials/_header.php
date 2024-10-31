@@ -15,8 +15,9 @@
     <h2>Blog</h2>
     <nav>
         <ul>
-            <li><a href="http://localhost:8888/piscine-php-test">Accueil</a></li>
-            <li><a href="http://localhost:8888/piscine-php-test/blog.php">Les articles</a></li>
+            <li><a href="http://localhost:8888/piscine-php-test/controller/index-controller.php">Accueil</a></li>
+            <li><a href="http://localhost:8888/piscine-php-test/controller/list-articles-controller.php">Les articles</a></li>
+            <li><a href="http://localhost:8888/piscine-php-test/controller/insert-article-controller.php">Insérer un article</a></li>
         </ul>
     </nav>
 

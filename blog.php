@@ -1,33 +1,13 @@
 <?php
 
-$articles = [
-    "1" => [
-        "title" => "Article 1",
-        "image" => "https://img.freepik.com/psd-premium/color-wing-png-isole-fond-transparent_1034016-9965.jpg",
-        "content" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia provident, repellendus. Adipisci architecto, commodi earum expedita facilis magnam, maxime, minima minus modi nulla porro quia rem suscipit unde ut voluptatem.",
-        "isPublished" => true
-    ],
-    "2" => [
-        "title" => "Article 2",
-        "image" => "https://img.freepik.com/psd-premium/color-wing-png-isole-fond-transparent_1034016-9965.jpg",
-        "content" => "blalblalblalb blabla",
-        "isPublished" => true
-    ],
-    "3" => [
-        "title" => "Article 3",
-        "image" => "https://img.freepik.com/psd-premium/color-wing-png-isole-fond-transparent_1034016-9965.jpg",
-        "content" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia provident, repellendus. Adipisci architecto, commodi earum expedita facilis magnam, maxime, minima minus modi nulla porro quia rem suscipit unde ut voluptatem.",
-        "isPublished" => true
-    ]
-];
+    $articleJsonFilePath = './articles.json';
 
-?>
+    $articleJson = file_get_contents($articleJsonFilePath);
 
+    $article = json_decode($articleJson, true);
 
-<?php
-
-    function isContentTooLong($article) {
-        return mb_strlen($article['content'], 'UTF-8') > 50;
+    function isStringTooLong($stringToCheck) {
+        return mb_strlen($stringToCheck, 'UTF-8') > 50;
     }
 
     function shortenString($stringToCut) {
@@ -37,35 +17,22 @@ $articles = [
 ?>
 
 
-
 <?php require_once('./partials/_header.php'); ?>
-
 
     <main>
 
         <h1>Les articles du blog</h1>
 
-        <?php foreach ($articles as $article) { ?>
-
-            <?php if ($article['isPublished'] === true) { ?>
-                <article>
-                    <h2><?php echo $article['title']; ?></h2>
-                    <img src="<?php echo $article['image']; ?>" alt="<?php echo $article['title']; ?>" />
-
-                    <?php if (isContentTooLong($article)) { ?>
-
-                        <p><?php echo shortenString($article['content']) ?></p>
-
-                    <?php } else { ?>
-
-                        <p><?php echo $article['content']; ?></p>
-
-                    <?php } ?>
-
-                </article>
+        <article>
+            <?php if (isStringTooLong($article['title'])) { ?>
+                <h2><?php echo shortenString($article['title']) ?></h2>
+            <?php } else { ?>
+                <h2><?php echo $article['title']; ?></h2>
             <?php } ?>
 
-        <?php } ?>
+            <p><?php echo $article['content']; ?></p>
+            <img src="<?php echo $article['image']; ?>" alt="<?php echo $article['title']; ?>">
+        </article>
 
 
 

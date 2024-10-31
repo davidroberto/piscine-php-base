@@ -44,7 +44,7 @@
                 $path = './articles.json';
 
                 // je convertis mon article en json
-                $jsonString = json_encode($article, JSON_PRETTY_PRINT);
+                $jsonString = json_encode($article,JSON_PRETTY_PRINT);
 
                 // j'ouvre le fichier json, je stocke mon article
                 // dedans et je ferme le fichier json

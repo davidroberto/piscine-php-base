@@ -4,6 +4,8 @@
 $isMessageSent = false;
 $isFormValid = false;
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $isMessageSent = true;
@@ -15,5 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $isFormValid = true;
     }
 }
+
+
+
+
 
  require_once('../view/contact-view.php');

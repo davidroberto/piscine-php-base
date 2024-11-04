@@ -1,6 +1,10 @@
 <?php require_once('../view/partials/_header.php'); ?>
 
+
+
+
 <main>
+
     <form method="post">
 
         <label for="firstName">Prénom</label>

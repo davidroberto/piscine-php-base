@@ -1,6 +1,6 @@
 <?php
 
-$articleJsonFilePath = '../articles.json';
+$articleJsonFilePath = '../../model/articles.json';
 
 $articleJson = file_get_contents($articleJsonFilePath);
 

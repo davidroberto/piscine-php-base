@@ -1,17 +1,8 @@
 <?php
 
-// je démarre la session
-session_start();
+require_once('../../service/authentification-service.php');
 
-// si la clé is_authenticated n'existe pas dans la session de l'utilisateur
-// ou qu'elle n'est pas égale à true
-if (!key_exists('is_authenticated', $_SESSION)  ||
-    !$_SESSION['is_authenticated']) {
-
-    // ça redirige vers la page de connexion
-    header('location: http://localhost:8888/piscine-php-test/controller/guest/connection-controller.php');
-}
-
+redirectNotLoggedUser();
 
 $isArticleCreated = false;
 
@@ -35,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // je récupère le chemin du fichier json
         // qui servira à stocker les données
-        $path = './articles.json';
+        $path = '../../model/articles.json';
 
         // je convertis mon article en json
         $jsonString = json_encode($article,JSON_PRETTY_PRINT);

@@ -1,26 +1,13 @@
 <?php require_once('../../view/guest/partials/_header.php'); ?>
 
 
-
-
 <main>
 
+    <?php if ($isFormSubmitted && $hasFormError) { ?>
 
-    <?php if ($isFormSubmitted) { ?>
-        <?php if($isAuthenticated) { ?>
-
-            <p>Vous êtes bien connecté !</p>
-
-        <?php } else { ?>
-
-            <p>Utilisateur non reconnu. Veuillez créer un compte</p>
-
-         <?php } ?>
+        <p>Utilisateur non reconnu. Veuillez créer un compte</p>
 
     <?php } ?>
-
-
-
 
     <p>Formulaire de connexion :</p>
     <form method="post">

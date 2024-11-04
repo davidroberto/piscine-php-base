@@ -5,6 +5,24 @@
 
 <main>
 
+
+    <?php if ($isFormSubmitted) { ?>
+        <?php if($isAuthenticated) { ?>
+
+            <p>Vous êtes bien connecté !</p>
+
+        <?php } else { ?>
+
+            <p>Utilisateur non reconnu. Veuillez créer un compte</p>
+
+         <?php } ?>
+
+    <?php } ?>
+
+
+
+
+    <p>Formulaire de connexion :</p>
     <form method="post">
 
         <label for="email">Email</label>

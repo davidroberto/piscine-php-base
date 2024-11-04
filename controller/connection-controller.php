@@ -1,6 +1,11 @@
 <?php
 
+$isAuthenticated= false;
+$isFormSubmitted = false;
+
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
+
+    $isFormSubmitted = true;
 
     // vérifier en BDD que l'email existe et que le mot de passe correspond à l'email
     if ($_POST['email'] === "contact.davidrobert@gmail.com" &&
@@ -20,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         // lié à l'espace de stockage
         // cet id de session est stocké dans les cookies du navigateur
 
-        echo "<p>Vous êtes bien connecté</p>";
 
+        $isAuthenticated = true;
     }
 
 }

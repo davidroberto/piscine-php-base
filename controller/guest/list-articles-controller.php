@@ -15,6 +15,6 @@ function shortenString($stringToCut) {
 }
 
 
-require_once('../view/list-articles-view.php');
+require_once('../../view/guest/list-articles-view.php');
 
 ?>

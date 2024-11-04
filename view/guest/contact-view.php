@@ -1,4 +1,4 @@
-<?php require_once('../view/partials/_header.php'); ?>
+<?php require_once('../../view/guest/partials/_header.php'); ?>
 
 
 
@@ -32,4 +32,4 @@
 </main>
 
 
-<?php require_once('../view/partials/_footer.php'); ?>
+<?php require_once('../../view/guest/partials/_footer.php'); ?>

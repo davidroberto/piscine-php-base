@@ -41,4 +41,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-require_once('../view/insert-article-view.php');
+require_once('../../view/admin/insert-article-view.php');

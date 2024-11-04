@@ -1,4 +1,4 @@
-<?php require_once('../view/partials/_header.php'); ?>
+
 
 <main>
 
@@ -27,4 +27,4 @@
 
 </main>
 
-<?php require_once('../view/partials/_footer.php'); ?>
+

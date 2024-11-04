@@ -39,4 +39,4 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 }
 
 
-require_once('../view/connection-view.php');
+require_once('../../view/guest/connection-view.php');

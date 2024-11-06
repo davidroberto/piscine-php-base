@@ -1,5 +1,7 @@
 <?php
 
+require_once('../../config/config.php');
+
 require_once('../../service/authentification-service.php');
 require_once('../../service/articles-service.php');
 
@@ -25,19 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "image" => $_POST['image'],
         ];
 
-        $currentArticles = findArticles();
-
-        // j'ajoute dans le tableau des articles sauvés, le nouvel article
-        $currentArticles[] = $articleCreated;
-
-        // je convertis mon article en json
-        $updatedArticlesJson = json_encode($currentArticles,JSON_PRETTY_PRINT);
-
-        // j'ouvre le fichier json, je stocke mon article
-        // dedans et je ferme le fichier json
-        $fp = fopen($articlesJsonpath, 'w');
-        fwrite($fp, $updatedArticlesJson);
-        fclose($fp);
+        insertArticle($articleCreated);
 
         $isArticleCreated = true;
     }

@@ -1,6 +1,7 @@
 <?php
 
 require_once('../../service/authentification-service.php');
+require_once('../../service/articles-service.php');
 
 redirectNotLoggedUser();
 
@@ -18,30 +19,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // je créé un tableau contenant toutes mes valeurs
         // issues du formulaire
-        $article = [
+        $articleCreated = [
             "title" => $_POST['title'],
             "content" => $_POST['content'],
             "image" => $_POST['image'],
         ];
 
-        // je récupère le chemin du fichier json
-        // qui servira à stocker les données
-        $path = '../../model/articles.json';
+        $currentArticles = findArticles();
+
+        // j'ajoute dans le tableau des articles sauvés, le nouvel article
+        $currentArticles[] = $articleCreated;
 
         // je convertis mon article en json
-        $jsonString = json_encode($article,JSON_PRETTY_PRINT);
+        $updatedArticlesJson = json_encode($currentArticles,JSON_PRETTY_PRINT);
 
         // j'ouvre le fichier json, je stocke mon article
         // dedans et je ferme le fichier json
-        $fp = fopen($path, 'w');
-        fwrite($fp, $jsonString);
+        $fp = fopen($articlesJsonpath, 'w');
+        fwrite($fp, $updatedArticlesJson);
         fclose($fp);
 
         $isArticleCreated = true;
     }
 }
-
-
 
 
 

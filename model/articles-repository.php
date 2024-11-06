@@ -11,6 +11,17 @@ function findArticles() {
     return $articles;
 }
 
+function findArticlesByCategory($category) {
+    $articlesJsonFilePath = '../../model/articles.json';
+
+    $articlesJson = file_get_contents($articlesJsonFilePath);
+
+    $articles = json_decode($articlesJson, true);
+
+    // filtrer le tableau d'articles pour accepter et retourner que ceux dont la
+    // catégorie correspond à celle passée en parametre
+}
+
 
 function insertArticle($articleCreated) {
     $currentArticles = findArticles();

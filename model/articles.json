@@ -1,17 +1,20 @@
 [
     {
-        "title": "Test1",
-        "content": "tr\"frr",
-        "image": "rtfrfrfr"
+        "title": "tettete",
+        "content": "teteete",
+        "image": "tetete",
+        "category": "Ecologie"
     },
     {
-        "title": "gtfrdezsa",
-        "content": "gtrfdesz",
-        "image": "gtrfdezs"
+        "title": "gtrfdezs",
+        "content": "thgrfedzs",
+        "image": "btgrfedzs",
+        "category": "Ecologie"
     },
     {
-        "title": "test4",
-        "content": "htgrfedzs",
-        "image": "gtrfedzs"
+        "title": "grfedzs",
+        "content": "tgrfedzs",
+        "image": "gtrfed",
+        "category": "Economie"
     }
 ]

@@ -3,7 +3,7 @@
 require_once('../../config/config.php');
 
 require_once('../../service/authentification-service.php');
-require_once('../../service/articles-service.php');
+require_once('../../model/articles-repository.php');
 
 redirectNotLoggedUser();
 
@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($_POST['title'] &&
         $_POST['content'] &&
+        $_POST['category'] &&
         $_POST['image'] &&
         mb_strlen($_POST['title']) > 3 &&
         mb_strlen($_POST['content']) > 4 &&
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "title" => $_POST['title'],
             "content" => $_POST['content'],
             "image" => $_POST['image'],
+            "category" => $_POST['category'],
         ];
 
         insertArticle($articleCreated);

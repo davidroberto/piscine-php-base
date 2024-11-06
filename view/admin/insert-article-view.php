@@ -16,6 +16,15 @@
         <label for="image">Image</label>
         <input type="text" name="image" />
 
+
+        <label for="category">Categorie</label>
+        <select name="category">
+            <option nvalue="ecologie">Ecologie</option>
+            <option nvalue="ecologie">Politique</option>
+            <option nvalue="ecologie">Economie</option>
+        </select>
+
+
         <input type="submit"/>
 
     </form>

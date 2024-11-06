@@ -18,8 +18,15 @@ function findArticlesByCategory($category) {
 
     $articles = json_decode($articlesJson, true);
 
-    // filtrer le tableau d'articles pour accepter et retourner que ceux dont la
-    // catégorie correspond à celle passée en parametre
+    $articlesInCategory = [];
+
+    foreach ($articles as $article) {
+        if ($article['category'] === $category) {
+            $articlesInCategory[] = $article;
+        }
+    }
+
+    return $articlesInCategory;
 }
 
 
